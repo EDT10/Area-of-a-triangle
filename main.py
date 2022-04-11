@@ -1,31 +1,41 @@
-#header describing the program
+# header describing the program
 
 print("###### THIS PROGRAM CALCULATES THE AREA OF A TRIANGE ######")
 
-
 # a function that calculates the area of the triangle.
 
+
 def cal():
-    #ask for length and width of triangle
+# ask for length and width of triangle
     length = input("Please enter the length: ")
-    width = input("Plese enter the width: ")
+    width = input("Please enter the width: ")
 
-    # convert the string values to floats and calculate the total area of the triangle.
-    total_area = float(length) * float(width)
-
-    print(f"The area of the triangle is: {total_area}")
-
+    #Use try and except to handle errors
+    try:
+        # convert the string values to floats and calculate the total area of the triangle.
+        total_area = float(length) * float(width)
+    #create an exception for input that are not numbers and negative numbers. Prints out the error message 
+    except ValueError:
+        print("ERR: Please enter a number")       
+    else:
+        #if statement for handling negative numbers.
+        if float(width) <= 0 or float(length) <= 0:
+            print(f"ERR: Sorry, you can't input negative numbers.")
+        else:
+            print(f"The area of the triangle is: {total_area}")
+    
+#while loop to continue ask users for additional area to calculate.
 
 while True:
-    #ask use if they a have a triangle to calculate. 
+    #ask use if they a have a triangle to calculate.
     new_cal = input("Do you have a triangle to calculate? Yes or No. ")
 
     #call the game function created above if user answered yes.
-    if new_cal == "Yes" or new_cal == "yes":
+    if new_cal == "yes" or new_cal == "Yes":
         cal()
-    
+
     #break out of while loop if user answered no
-    elif new_cal == "No" or new_cal == "no":
+    elif new_cal == "no" or new_cal == "No":
         print("Thank you, Goodbye!")
         break
 
