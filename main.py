@@ -8,7 +8,7 @@ print("###### THIS PROGRAM CALCULATES THE AREA OF A TRIANGE ######")
 def cal():
     #ask for length and width of triangle
     length = input("Please enter the length: ")
-    width = input("Please enter the width: ")
+    width = input("Plese enter the width: ")
 
     # convert the string values to floats and calculate the total area of the triangle.
     total_area = float(length) * float(width)
